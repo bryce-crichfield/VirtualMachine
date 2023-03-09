@@ -1,0 +1,15 @@
+.begin_constants
+    #c1     number      01
+    #f1     number      04
+    #c2     number      02
+.end_constants
+
+.begin_bytecode
+    push    #c1
+    push    #c1
+    call    #f1     #c2
+    halt
+    add
+    ret
+.end_bytecode
+
