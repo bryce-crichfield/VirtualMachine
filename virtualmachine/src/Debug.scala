@@ -34,4 +34,12 @@ object Debug {
             Debug[Stack[Value]].dump(context.stack, "Stack")
         }()
     }
+
+    given Debug[ProgramUnit] = (self: ProgramUnit, name: String) => {
+        println(f"ProgramUnit ${name} {")
+        self.symbols.foreach { (symbol, value) => println(s"  ${symbol.sym} = ${value}") }
+        println("  ;;;")
+        self.bytecode.foreach { instr => println(s"  ${instr}") }
+        println("}\n")
+    }
 }

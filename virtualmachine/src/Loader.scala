@@ -1,5 +1,6 @@
 import scala.io.Source
 
+
 case class ConstantDefintion(symbol: Symbol, value: Value)
 
 class Loader {

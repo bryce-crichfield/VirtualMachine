@@ -96,6 +96,10 @@ case class Add() extends Instruction {
     }
 }
 
+case class Sub() extends Instruction {
+    def execute(machine: VirtualMachine): Attempt[Unit] = ???
+}
+
 case class Jump(bytecode: Symbol) extends Instruction {
     def execute(machine: VirtualMachine): Attempt[Unit] = {
         for {

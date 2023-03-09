@@ -1,4 +1,4 @@
-// Collections
+// RUNTIME REPRESENTATION OF SYMBOL TABLES
 class SymbolTable(size: Int) {
     private var capacity: Int = 0
     private var table: Map[Symbol, Value] = Map()
@@ -41,6 +41,8 @@ class SymbolTable(size: Int) {
     def load(other: SymbolTable): Unit = { table = table ++ other.table }
 
     def data(): Map[Symbol, Value] = { return table }
+
+    def has(symbol: Symbol): Boolean = { return table.contains(symbol) }
 }
 
 class SymbolTableBuilder {
@@ -50,6 +52,8 @@ class SymbolTableBuilder {
         table = table.updated(symbol, value)
         return this
     }
+
+    def has(symbol: Symbol): Boolean = { return table.contains(symbol) }
 
     def build(): SymbolTable = {
         val symbols = new SymbolTable(table.size)
